@@ -42,14 +42,14 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-3 col-md-12">
+									<div class="col-lg-2 col-md-12">
 										<label>	Status properti</label><br>	
 										<select class="selectpicker" name="status_properti">
 		  										<option value="Disewakan">Disewakan</option>
 		  										<option value="dijual">Dijual</option>
 										</select>
 									</div>
-									<div class="col-lg-3 col-md-12">	
+									<div class="col-lg-2 col-md-12">	
 										<label>	Tipe properti</label><br>	
 										<select class="selectpicker" name="tipe_properti">
 		  										<option value="Kost">Kost</option>
@@ -57,13 +57,13 @@
 		  										<option value="Apartemen">Apartemen</option>
 										</select>
 									</div>
-									<div class="col-lg-3 col-md-12">
+									<div class="col-lg-2 col-md-12">
 										
 										<label>	Jumlah Kamar </label><br>	
 										<input type="text" name="jumlah_kamar" placeholder="0">
 										<!-- <select class="selectpicker" name="jumlah_kamar"></select> -->
 									</div>
-									<div class="col-lg-3 col-md-12">
+									<div class="col-lg-2 col-md-12">
 										<p class="no-mb last">
 											<label for="area">Kampus</label><br>	
 											<select class="selectpicker" name="kampus">
@@ -71,6 +71,28 @@
 		  										<option value="itb">ITB</option>
 		  										<option value="unikom">UNIKOM</option>
 		  										<option value="unpad">UNPAD</option>
+										</select>
+										</p>
+									</div>
+
+									<div class="col-lg-2 col-md-12">
+										<p class="no-mb last">
+											<label for="area">Kategori</label><br>	
+											<select class="selectpicker" name="kategori_properti">
+		  										<option value="putra">Putra</option>
+		  										<option value="putri">Putri</option>
+		  										<option value="putra/putri">Putra/Putri</option>
+										</select>
+										</p>
+									</div>
+
+									<div class="col-lg-2 col-md-12">
+										<p class="no-mb last">
+											<label for="area">Jenis</label><br>	
+											<select class="selectpicker" name="jenis_properti">
+		  										<option value="harian">Harian</option>
+		  										<option value="bulanan">Bulanan</option>
+		  										<option value="tahunan">Tahunan</option>
 										</select>
 										</p>
 									</div>

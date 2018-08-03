@@ -106,7 +106,7 @@
 
 	<!-- START SECTION RECENTLY PROPERTIES -->
 	<section class="recently portfolio">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="section-title">
 				<h3>Terbaru</h3>
 				<h2>Properti</h2>
@@ -116,7 +116,7 @@
 			?>
 			
 
-				<div class="item col-lg-3 col-md-6 col-xs-12 landscapes">
+				<div class="item col-lg-4 col-md-6 col-xs-12 landscapes">
 					<div class="project-single">
 						<div class="project-inner project-head">
 							<div class="project-bottom">
@@ -175,7 +175,7 @@
 								<!-- <button>jadwalkan survey</button> -->
 								<center>
 								<button class="btn">
-								<a href="http://bit.ly/FormSurveyKoseeker" target="new_blank">
+								<a href="<?php echo base_url('survey') ?>">
 									<i class="fa fa-user"></i> Jadwalkan Survey
 								</a>
 								</button>

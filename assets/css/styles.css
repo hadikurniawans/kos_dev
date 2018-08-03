@@ -1001,7 +1001,8 @@ section.recently.portfolio {
   margin-bottom: 0px; }
 
 .recently .homes-content .homes-address {
-  margin-top: 0px; }
+  margin-top: 0px;
+  min-height: 53px; }
 
 .recently .homes-content .homes-address .fa-map-marker {
   font-size: 1rem;

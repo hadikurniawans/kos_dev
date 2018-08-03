@@ -55,17 +55,27 @@ class Home extends CI_Controller {
         $config['upload_path']   = FCPATH.'/upload/';
         $config['allowed_types'] = 'gif|jpg|png|ico';
         $this->load->library('upload',$config);
-		$t=time();
+		// $new_name = time().$_FILES["userfiles"]['name'];
+		// $config['file_name'] = $new_name;
+		$tm ='';
+		// $t=time();
         if($this->upload->do_upload('userfile')){
-        	$token=$this->input->post('token_foto');
-        	$new_name = time().$_FILES["userfiles"]['name'];
-			$config['file_name'] = $new_name;
-			$nama=$this->upload->data('file_name');
-        	$this->db->insert('gambar_properti',array('gambar'=>$nama,'token'=>$token, 'tanggal_upload'=>$t));
-        	$newdata = array(
-				'checker'  => $t
-			);
-			$this->session->set_userdata($newdata);	
+        	$nama=$this->upload->data('file_name');
+			$token=$this->input->post('token_foto');
+        	if($this->session->userdata('checker')){
+			     // do something when exist
+        		$tm = $this->session->userdata('checker');
+			}else{
+				 // do something when doesn't exist
+				$tm = time();
+				$newdata = array(
+					'checker'  => $tm
+				);
+				$this->session->set_userdata($newdata);
+			}
+			$this->db->insert('gambar_properti',array('gambar'=>$nama,'token'=>$token, 'tanggal_upload'=>$tm));
+        }else{
+        	echo "error occured";
         }
 	}
 
@@ -99,7 +109,9 @@ class Home extends CI_Controller {
 			'deskripsi_properti' => $this->input->post('deskripsi_properti'),
 			'jumlah_kamar' => $this->input->post('jumlah_kamar'),
 			'kampus' => $this->input->post('kampus'),
-			'daerah_kampus' => $this->input->post('daerah_kampus')
+			'daerah_kampus' => $this->input->post('daerah_kampus'),
+			'kategori_properti' => $this->input->post('kategori_properti'),
+			'jenis_properti' => $this->input->post('jenis_properti')
 		);
 
 		$data_pemilik = array(
@@ -130,21 +142,26 @@ class Home extends CI_Controller {
 			$this->m_home->add_data('data_fasilitas_properti', $df);
 		}
 		// update datanya
-			$tgl = $this->session->userdata('checker');
+			$tkn = $this->session->userdata('checker');
 			$idg = $this->m_home->get_data_gambar(
 			'gambar_properti', 
 			'tanggal_upload',
-			$tgl);
+			$tkn);
 
 			foreach ($idg as $ig) {
 				$data_baru = $arrayName = array(
 					'id_properti' => $i->id_properti
 				);
-				$this->m_home->update_data('tanggal_upload',$tgl,'gambar_properti',$data_baru);
+				$this->m_home->update_data('tanggal_upload',$tkn,'gambar_properti',$data_baru);
 			}
-
 		// hapus sessionnya
 		$this->session->sess_destroy();
 		redirect('/kesinibang');
+	}
+
+	public function request_survey(){
+		$this->load->view('templates/scnd_template/header');
+		$this->load->view('survey');
+		$this->load->view('templates/footer');
 	}
 }

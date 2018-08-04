@@ -12,6 +12,7 @@
 	<section class="blog details">
 		<div class="container">
 			<div class="row">
+				<?php foreach ($detail_properti as $dp) {} ?>
 				<div class="col-lg-9 col-md-12 blog-pots">
 					<!-- Block heading Start-->
 					<div class="block-heading details">
@@ -21,13 +22,13 @@
                             <span class="heading-icon">
                                 <i class="fa fa-map-marker"></i>
                                 </span>
-                                <span class="hidden-sm-down">995 South Park Avenue</span>
+                                <span class="hidden-sm-down"><?php echo $dp->daerah_kampus.', '.$dp->kampus ?></span>
                             </h4>
 							</div>
 							<div class="col-lg-6 col-md-6 col-10 cod-pad">
 								<div class="sorting-options">
-									<h5><span>Price:</span> $28,000</h5>
-									<h6 class="type"><span>Type:</span> For Sale</h6>
+									<h5><span>Harga Sewa:</span> Rp. <?php echo $dp->harga_properti ?></h5>
+									<h6 class="type"><span><?php echo $dp->tipe_properti ?> : </span><?php echo $dp->kategori_properti ?></h6>
 								</div>
 							</div>
 						</div>
@@ -43,18 +44,22 @@
 									<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
 								</ol>
 								<div class="carousel-inner" role="listbox">
-									<div class="carousel-item active">
-										<img class="d-block img-fluid" src="<?php echo base_url('assets/') ?>images/slider/home-slider-1.jpg" alt="First slide">
+									<?php 
+									$a = 0;
+									$b = '';
+									foreach ($data_foto as $df) {
+									
+									?>
+									<div class="carousel-item <?php if($a == 0){
+									echo 'active'; } $a++; ?>">
+										<img class="d-block img-fluid" src="<?php echo $df->gambar ?>" alt="first slide">
 									</div>
-									<div class="carousel-item">
+									<?php
+									} ?> 
+									
+<!-- 									<div class="carousel-item">
 										<img class="d-block img-fluid" src="<?php echo base_url('assets/') ?>images/slider/home-slider-2.jpg" alt="Second slide">
-									</div>
-									<div class="carousel-item">
-										<img class="d-block img-fluid" src="<?php echo base_url('assets/') ?>images/slider/home-slider-3.jpg" alt="Third slide">
-									</div>
-									<div class="carousel-item">
-										<img class="d-block img-fluid" src="<?php echo base_url('assets/') ?>images/slider/home-slider-4.jpg" alt="Second slide">
-									</div>
+									</div> -->
 								</div>
 								<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -96,10 +101,8 @@
 										</li>
 									</ul>
 								</div>
-								<h5 class="mb-4">GENERAL INFORMATION</h5>
-								<p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
-								<p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
-								<p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit, alias fuga aliquam quod tempora a nisi esse magnam nulla quas! Error praesentium, vero dolorum laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum rerum beatae consequatur, totam fugit.</p>
+								<h5 class="mb-4">Informasi Umum</h5>
+								<p class="mb-3"><?php echo $dp->deskripsi_properti ?></p>
 							</div>
 						</div>
 					</div>
@@ -109,122 +112,14 @@
 						<h5 class="mb-4">Amenities</h5>
 						<!-- cars List -->
 						<ul class="homes-list clearfix">
+							<?php foreach ($all_fasilitas as $af) { ?>
 							<li>
 								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Air Cond</span>
+								<span><?php echo $af->nama_properti ?></span>
 							</li>
-							<li>
-								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Balcony</span>
-							</li>
-							<li>
-								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Internet</span>
-							</li>
-							<li>
-								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Dishwasher</span>
-							</li>
-							<li>
-								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Bedding</span>
-							</li>
-							<li>
-								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Cable TV</span>
-							</li>
-							<li>
-								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Parking</span>
-							</li>
-							<li>
-								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Pool</span>
-							</li>
-							<li>
-								<i class="fa fa-check-square" aria-hidden="true"></i>
-								<span>Fridge</span>
-							</li>
+							<?php } ?>
 						</ul>
 					</div>
-					<!-- START SECTION ASSIGNED AGENTS -->
-					<section class="team assigned">
-						<div class="container">
-							<h5>Assigned Agents</h5>
-							<div class="row team-all">
-								<div class="col-lg-4 col-md-6 team-pro hover-effect">
-									<div class="team-wrap">
-										<div class="team-img">
-											<img src="<?php echo base_url('assets/') ?>images/team/t-5.jpg" alt="" />
-										</div>
-										<div class="team-content">
-											<div class="team-info">
-												<h3>Andrew Crow</h3>
-												<p>Real Estate Agents</p>
-												<div class="team-socials">
-													<ul>
-														<li>
-															<a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-															<a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-															<a href="#" title="instagran"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-														</li>
-													</ul>
-												</div>
-												<span><a href="agent-details.html">View Profile</a></span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6 team-pro hover-effect">
-									<div class="team-wrap">
-										<div class="team-img">
-											<img src="<?php echo base_url('assets/') ?>images/team/t-6.jpg" alt="" />
-										</div>
-										<div class="team-content">
-											<div class="team-info">
-												<h3>Marie Tyler</h3>
-												<p>Real Estate Agents</p>
-												<div class="team-socials">
-													<ul>
-														<li>
-															<a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-															<a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-															<a href="#" title="instagran"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-														</li>
-													</ul>
-												</div>
-												<span><a href="agent-details.html">View Profile</a></span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6 team-pro pb-none pb-on hover-effect">
-									<div class="team-wrap">
-										<div class="team-img">
-											<img src="<?php echo base_url('assets/') ?>images/team/t-7.jpg" alt="" />
-										</div>
-										<div class="team-content">
-											<div class="team-info">
-												<h3>Phillip Smith</h3>
-												<p>Real Estate Agents</p>
-												<div class="team-socials">
-													<ul>
-														<li>
-															<a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-															<a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-															<a href="#" title="instagran"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-														</li>
-													</ul>
-												</div>
-												<span><a href="agent-details.html">View Profile</a></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- END SECTION ASSIGNED AGENTS -->
 				</div>
 				<aside class="col-lg-3 col-md-12 car">
 					<div class="widget">
@@ -234,125 +129,26 @@
 									<i class="fa fa-home"></i>
 								</div>
 								<div class="media-body">
-									<h5>Search Properties</h5>
+									<h5>Mau dianterin Survey Kostan?</h5>
 									<div class="border"></div>
-									<p>Search your Properties</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
 						<!-- Search Fields -->
-						<div class="main-search-field">
-							<h5 class="title">Filter</h5>
-							<form method="GET">
-								<div class="at-col-default-mar">
-									<select>
-										<option value="0" selected>Location</option>
-										<option value="1">New York</option>
-										<option value="2">Los Angeles</option>
-										<option value="3">Chicago</option>
-										<option value="4">Philadelphia</option>
-										<option value="5">San Francisco</option>
-									</select>
-								</div>
-								<div class="at-col-default-mar">
-									<select class="div-toggle" data-target=".my-info-1">
-										<option value="0" data-show=".acitveon" selected>Property Status</option>
-										<option value="1" data-show=".sale">For Sale</option>
-										<option value="2" data-show=".rent">For Rent</option>
-										<option value="3" data-show=".rent">Sold</option>
-									</select>
-								</div>
-								<div class="at-col-default-mar">
-									<div class="at-col-default-mar">
-										<select>
-											<option value="0" selected>Property Type</option>
-											<option value="1">Family House</option>
-											<option value="2">Apartment</option>
-											<option value="3">Condo</option>
-										</select>
-									</div>
-								</div>
-								<div class="at-col-default-mar">
-									<select>
-										<option value="0" selected>Beds</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-									</select>
-								</div>
-								<div class="at-col-default-mar">
-									<select>
-										<option value="0" selected>Baths</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-									</select>
-								</div>
-								<div class="col-lg-12 no-pds">
-									<div class="at-col-default-mar">
-										<input class="at-input" type="text" name="min-area" placeholder="Squre Fit Min">
-									</div>
-								</div>
-								<div class="col-lg-12 no-pds my-4">
-									<div class="at-col-default-mar">
-										<input class="at-input" type="text" name="max-area" placeholder="Squre Fit Max">
-									</div>
-								</div>
-							</form>
-						</div>
-						<!-- Price Fields -->
-						<div class="main-search-field-2">
-							<div class="range-slider">
-								<input type="text" disabled class="slider_amount m-t-lg-30 m-t-xs-0 m-t-sm-10">
-								<div class="slider-range"></div>
-							</div>
-						</div>
-						<div class="col-lg-12 no-pds">
-							<div class="at-col-default-mar">
-								<button class="btn btn-default hvr-bounce-to-right" type="submit">Search</button>
-							</div>
-						</div>
 						<div class="recent-post py-5">
-							<h5 class="font-weight-bold mb-4">Recent Properties</h5>
 							<div class="recent-main">
-								<div class="recent-img">
-									<a href="blog-details.html"><img src="<?php echo base_url('assets/') ?>images/feature-properties/fp-1.jpg" alt=""></a>
-								</div>
-								<div class="info-img">
-									<a href="blog-details.html"><h6>Family Home</h6></a>
-									<p>$230,000</p>
-								</div>
-							</div>
-							<div class="recent-main my-4">
-								<div class="recent-img">
-									<a href="blog-details.html"><img src="<?php echo base_url('assets/') ?>images/feature-properties/fp-2.jpg" alt=""></a>
-								</div>
-								<div class="info-img">
-									<a href="blog-details.html"><h6>Family Home</h6></a>
-									<p>$230,000</p>
-								</div>
+								<p><h4>jadwalkan untuk survey dengan agen koseeker <a href="<?php echo base_url('survey')?>" target="new_blank">disini</a>,</h4></p>					
 							</div>
 							<div class="recent-main">
-								<div class="recent-img">
-									<a href="blog-details.html"><img src="<?php echo base_url('assets/') ?>images/feature-properties/fp-3.jpg" alt=""></a>
-								</div>
-								<div class="info-img">
-									<a href="blog-details.html"><h6>Family Home</h6></a>
-									<p>$230,000</p>
+								<p><h4>atau chat dengan admin koseeker melalui whatsapp <a href="https://api.whatsapp.com/send?phone=6289530781416&text=Hallo%20admin%20Koseeker" target="new_blank">disini</a>.</h4></p>
+
+							</div>
+							<p><h4>tambahkan kita di Line juga</h4></p>
+							<div class="recent-main">
+								<div class="line-img">
+								<img src="<?php echo base_url('assets/images/barcode/barcode_line.jpg') ?>">
+									<a href="blog-details.html"></a>
 								</div>
 							</div>
 						</div>

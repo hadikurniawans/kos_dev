@@ -16,7 +16,7 @@
 
 							<!-- Search Form -->
 							<div class="trip-search">
-								<form class="form">
+								<form method="post" action="<?php echo base_url('search') ?>" class="form">
 									<!-- Form Location -->
 									<div class="form-group location">
 										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-map-marker"></i>Kampus</span>
@@ -124,16 +124,21 @@
 							</div>
 							<div class="button-effect">
 								<a href="<?php echo base_url('detail/').$dkt->id_properti?>" class="btn"><i class="fa fa-link"></i></a>
-								<a href="<?php echo base_url('assets/') ?>https://www.youtube.com/watch?v=2xHQqYRcrx4" class="btn popup-video popup-youtube"><i class="fas fa-video"></i></a>
-								<a class="img-poppu btn" href="<?php echo base_url('assets/') ?>images/feature-properties/fp-1.jpg" data-rel="lightcase:myCollection:slideshow"><i class="fa fa-photo"></i></a>
+								<a href="<?php echo $dkt->video_properti.'?autoplay=1' ?>" class="btn popup-video popup-youtube"><i class="fas fa-video"></i></a>
+								<?php foreach ($data_foto as $df) {
+								?>
+								<a class="img-poppu btn" href="<?php echo $df->gambar ?>" data-rel="lightcase:myCollection:slideshow"><i class="fa fa-photo"></i></a>
+								<?php
+								} ?>
+								
 							</div>
 							<div class="homes">
 								<!-- homes img -->
 								<a href="<?php echo base_url('detail/').$dkt->id_properti?>" class="homes-img">
 									<div class="homes-tag button alt featured">Tersedia</div>
-									<div class="homes-tag button alt sale"><?php echo $dkt->status_properti ?></div>
+									<div class="homes-tag button alt sale"><?php echo $dkt->jenis_properti ?></div>
 									<div class="homes-price"><?php echo $dkt->tipe_properti ?></div>
-									<img src="<?php echo base_url('upload/thumbnail/').$dkt->thumbnail ?>" alt="home-1" class="img-responsive">
+									<img src="<?php echo $dkt->thumbnail ?>" alt="home-1" class="img-responsive">
 								</a>
 							</div>
 						</div>
@@ -144,13 +149,17 @@
 							<p class="homes-address mb-3">
 								<a href="<?php echo base_url('detail/').$dkt->id_properti?>">
 									<i class="fa fa-map-marker"></i><span><?php echo $dkt->alamat_properti ?></span>
+								</a><br>
+								<a href="<?php echo base_url('detail/').$dkt->id_properti?>">
+
+									<i class="fa fa-male"></i><span><?php echo $dkt->kategori_properti ?></span>
 								</a>
 							</p>
 							<!-- homes List -->
 							<ul class="homes-list clearfix">
 								<li>
 									<i class="fa fa-bed" aria-hidden="true"></i>
-									<span><?php echo $dkt->jumlah_kamar ?> Kamar</span>
+									<span><?php echo $dkt->jumlah_kamar ?> Kamar kosong</span>
 								</li>
 								<li>
 									<i class="fa fa-bath" aria-hidden="true"></i>
@@ -208,8 +217,7 @@
 						</div>
 						<div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
 							<h4 class="m-bottom-15 text-bold-700">Kost</h4>
-							<p>Hunian sementara harian, bulanan dan tahunan.</p>
-							<a class="text-base text-base-dark-hover text-size-13" href="<?php echo base_url('assets/') ?>properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+							<p>Hunian sementara harian, bulanan dan tahunan. banyak pilihan kost yang bisa kamu pilih untuk kamu sewa.</p>
 						</div>
 					</div>
 				</div>
@@ -220,8 +228,7 @@
 						</div>
 						<div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
 							<h4 class="m-bottom-15 text-bold-700">Apartment</h4>
-							<p>Nonec pede justo fringilla vel aliquet nec vulputate eget arcu in enim justo rhoncus ut imperdiet venenatis vitae justo.</p>
-							<a class="text-base text-base-dark-hover text-size-13" href="<?php echo base_url('assets/') ?>properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+							<p>Hunian dalam apartemen bisa kamu cari disini, dapatkan apartemen idamanmu. pilih tipe apartemen pilihanmu, dapatkan harga eksklusif</p>
 						</div>
 					</div>
 				</div>
@@ -232,8 +239,7 @@
 						</div>
 						<div class="agent-section p-top-35 p-bottom-30 p-right-25 p-left-25">
 							<h4 class="m-bottom-15 text-bold-700">Kontrakan</h4>
-							<p>Nonec pede justo fringilla vel aliquet nec vulputate eget arcu in enim justo rhoncus ut imperdiet venenatis vitae justo.</p>
-							<a class="text-base text-base-dark-hover text-size-13" href="<?php echo base_url('assets/') ?>properties-full-list.html">Read More <i class="fa fa-long-arrow-right"></i></a>
+							<p>tempat tinggal bersama teman temanmu disekitar kampus, sewa tahunan dan bayar bersama teman-temanmu.</p>
 						</div>
 					</div>
 				</div>
@@ -344,48 +350,3 @@
 		</div>
 	</section>
 	<!-- END SECTION FEATURED PROPERTIES -->
-
-	<!-- START SECTION COUNTER UP -->
-	<section class="counterup">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6 col-xs-12">
-					<div class="countr">
-						<i class="fa fa-home" aria-hidden="true"></i>
-						<div class="count-me">
-							<p class="counter text-left">300</p>
-							<h3>Sold Houses</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-xs-12">
-					<div class="countr">
-						<i class="fa fa-list" aria-hidden="true"></i>
-						<div class="count-me">
-							<p class="counter text-left">400</p>
-							<h3>Daily Listings</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-xs-12">
-					<div class="countr mb-0">
-						<i class="fa fa-users" aria-hidden="true"></i>
-						<div class="count-me">
-							<p class="counter text-left">250</p>
-							<h3>Expert Agents</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-xs-12">
-					<div class="countr mb-0 last">
-						<i class="fa fa-trophy" aria-hidden="true"></i>
-						<div class="count-me">
-							<p class="counter text-left">200</p>
-							<h3>Won Awars</h3>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- END SECTION COUNTER UP -->

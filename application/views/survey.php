@@ -12,25 +12,35 @@
 	<!-- START SECTION 404 -->
 	<div id="login">
 		<div class="login">
-			<form autocomplete="off">
+			<form method="POST" action="<?php echo base_url('isi_survey') ?>" autocomplete="off">
 				<div class="form-group">
 					<label>Nama</label>
-					<input class="form-control" type="text">
+					<input class="form-control" name="nama_user" type="text">
 					<i class="ti-user"></i>
 				</div>
 				<div class="form-group">
 					<label>No. Telp</label>
-					<input class="form-control" type="text">
+					<input class="form-control" name="noTelp_user" type="text">
 					<i class="ti-user"></i>
 				</div>
 				<div class="form-group">
-					<label>ningali</label>
-					<input class="form-control" type="email">
+					<label>Tanggal Survey</label>
+					<input class="form-control" name="tanggal_survey" type="date">
 					<i class="icon_mail_alt"></i>
 				</div>
-				
+				<div class="form-group">
+					<label>Jam</label>
+					<input class="form-control" name="jam_survey" type="time">
+					<i class="icon_mail_alt"></i>
+				</div>
+				<div class="form-group">
+					<label>Nama Kos/Kontrakan</label>
+					<input class="form-control" name="nama_kost_survey" type="text">
+					<i class="icon_mail_alt"></i>
+				</div>
 				<div id="pass-info" class="clearfix"></div>
-				<a href="#0" class="btn_1 rounded full-width add_top_30">Submit</a>
+				<button type="submit" class="btn_1 rounded full-width add_top_30">submit</button>
+				<!-- <a type="submit" class="btn_1 rounded full-width add_top_30">Submit</a> -->
 				<!-- <div class="text-center add_top_10">Already have an acccount? <strong><a href="login.html">Sign In</a></strong></div> -->
 			</form>
 		</div>

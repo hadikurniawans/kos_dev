@@ -1,17 +1,7 @@
-<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/js/dropzone.min.js') ?>"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/dropzone.min.js') ?>"></script> -->
 <body class="inner-pages">
 	<!-- START SECTION HEADINGS -->
-	<div class="header"></div>
-
-	<section class="headings">
-		<div class="text-heading text-center">
-			<div class="container">
-				<h1>Unggah properti disini ya bro</h1>
-			</div>
-		</div>
-	</section>
-	<!-- END SECTION HEADINGS -->
 
 	<!-- START SECTION SUBMIT PROPERTY -->
 	<section class="royal-add-property-area section_100">
@@ -24,7 +14,7 @@
 						
 					</div>
 						<div class="property-form-group">
-							<form method="POST" action="<?php echo base_url('tambah_data')?>">
+							<form method="POST" enctype="multipart/form-data" action="<?php echo base_url('tambah_data')?>">
 								<div class="row">
 									<div class="col-md-12">
 										<p>
@@ -145,7 +135,7 @@
 									<br>	
 								<!-- add2 -->
 
-							<div class="row">
+							<!-- <div class="row">
 								<div class="col-lg-4 col-md-12">
 									<p>
 										<label for="con-name">Nama Pemilik</label>
@@ -164,13 +154,36 @@
 										<input type="text" placeholder="nomor Hp" id="con-phn" name="noHp_pemilik">
 									</p>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="row">
 								<div class="col-md-12">
-									<div class="dropzone"></div>
+									<p>
+										<label>Upload foto (CSV) </label>
+										<input type="file" name="userfile">
+									</p>
 								</div>
 							</div>
+
+							<div class="row">
+								<div class="col-lg-6 col-md-12">
+									<p>
+										<label>Link video </label>
+										<input type="text" name="video_properti">
+									</p>
+								</div>
+								<div class="col-lg-6 col-md-12">
+									<p>
+										<label>Link thumbnail </label>
+										<input type="text" name="thumbnail">
+									</p>
+								</div>
+							</div>
+<!-- 							<div class="row">
+								<div class="col-md-12">
+									<div class="dropzone"></div>
+								</div>
+							</div> -->
 						
 							<br>	
 							<button type="submit" class="btn btn-danger">submit</button>
@@ -184,7 +197,7 @@
 	</section>
 	<!-- END SECTION SUBMIT PROPERTY -->
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 Dropzone.autoDiscover = false;
 
@@ -224,4 +237,4 @@ foto_upload.on("removedfile",function(a){
 });
 
 
-</script>
+</script> -->

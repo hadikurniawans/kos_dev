@@ -18,6 +18,16 @@ class m_home extends CI_Model {
 			return $this->db->get()->result();
 		}
 
+		// iya tau ini ga efektif, udah gausah bacot
+		public function get_data_by_id2($table, $where, $id)
+		{
+			$this->db->select('*');
+			$this->db->from($table);
+			$this->db->where($where, $id);
+			return $this->db->get()->result();
+		}
+		//
+
 		public function get_data_gambar($table, $where, $id)
 		{
 			$this->db->select('*');
@@ -40,9 +50,26 @@ class m_home extends CI_Model {
 		}
 
 		public function data_foto(){
-			$this->db->select('*');
+			$this->db->select('gambar');
 			$this->db->from('data_properti dp');
 			$this->db->join('gambar_properti gp','dp.id_properti = gp.id_properti');
+			return $this->db->get()->result();
+		}
+
+		public function data_detail_foto($id){
+			$this->db->select('gambar');
+			$this->db->from('data_properti dp');
+			$this->db->join('gambar_properti gp','dp.id_properti = gp.id_properti');
+			$this->db->where('dp.id_properti',$id);
+			return $this->db->get()->result();
+		}
+
+		// get semua fasilitas kosan
+		public function data_fasilitas($id){
+			$this->db->select('nama_properti');
+			$this->db->from('data_fasilitas_properti dfp');
+			$this->db->join('fasilitas_properti fp', 'dfp.id_fasilitas_properti = fp.id_fasilitas_properti');
+			$this->db->where('dfp.id_data_properti', $id);
 			return $this->db->get()->result();
 		}
 	}

@@ -9,8 +9,7 @@
 							<a href="<?php echo base_url('assets/') ?>" class="logo">
 								<img src="<?php echo base_url('assets/') ?>images/logofix.png" alt="netcom">
 							</a>
-							<p>Koseeker memiliki ratusan data kos yang siap dihuni oleh mahasiswa dikampus-kampus wilayah bandung .</p>
-							<a href="#" class="btn btn-secondary">Baca lebih lanjut...</a>
+							<p>Koseeker memiliki ratusan data kos yang siap dihuni oleh mahasiswa dikampus-kampus wilayah bandung. Koseeker bisa mengantarkan kamu ke tempat kos/apartemen/kontrakan yang kamu inginkan.</p>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
@@ -32,8 +31,8 @@
 							<ul>
 								<li>
 									<div class="info">
-										<i class="fa fa-map-marker" aria-hidden="true"></i>
-										<p class="in-p">Bandung, Indonesia</p>
+										<i class="fa fa-instagram" aria-hidden="true"></i>
+										<p class="in-p">@koseeker</p>
 									</div>
 								</li>
 								<li>
@@ -44,17 +43,16 @@
 								</li>
 								<li>
 									<div class="info">
-										<i class="fa fa-envelope" aria-hidden="true"></i>
-										<p class="in-p ti">koseeker.official@gmail.com</p>
+										<i class="fa fa-facebook-official" aria-hidden="true"></i>
+										<p class="in-p ti">koseeker</p>
 									</div>
 								</li>
 							</ul>
 						</div>
 						<ul class="netsocials">
-							<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-							<li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							<li><a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.facebook.com/koseeker.official"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.instagram.com/koseeker/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="https://api.whatsapp.com/send?phone=6289530781416&text=Hallo%20admin%20Koseeker"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -68,6 +66,7 @@
 		</div>
 	</footer>
 
+
 	<a data-scroll href="#heading" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
 	<!-- END FOOTER -->
 
@@ -79,7 +78,6 @@
 	</div>
 	<!-- END PRELOADER -->
 	<!--Style Switcher===========================================-->
-
 	<!-- ARCHIVES JS -->
 	<script src="<?php echo base_url('assets/') ?>js/jquery.min.js"></script>
 	<script src="<?php echo base_url('assets/') ?>js/jquery-ui.js"></script>

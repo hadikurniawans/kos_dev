@@ -5612,6 +5612,11 @@ a.btn_1.full-width {
   height: 70px;
   margin-right: 1rem; }
 
+.line-img img {
+  width: 125px;
+  height: 125px;
+  margin-right: 1rem; }
+
 .inner-pages .info-img h6 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem; }

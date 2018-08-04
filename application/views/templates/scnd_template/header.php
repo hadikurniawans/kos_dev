@@ -45,6 +45,11 @@
 						<p><i class="fa fa-envelope" aria-hidden="true"></i> koseeker.official@gmail.com</p>
 					</div>
 				</div>
+				<div>
+				<div class="mail-header">
+					<a href="<?php echo base_url('admin') ?>"><p><i class="fas fa-sign-in-alt" aria-hidden="true"></i></p></a>
+				</div>
+			</div>
 			</div>
 		</div>
 		<!-- <div class="header-bottom heading sticky-header" id="heading"></div> -->

@@ -361,4 +361,11 @@ class Home extends CI_Controller {
 		$this->load->view('percobaan');
 	}
 
+	// search
+	public function search(){
+		$kampus = $this->input->post('kampus');
+		echo $kampus;
+		echo 'tes';
+	}
+
 }

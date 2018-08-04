@@ -10,7 +10,7 @@
 							<!-- Welcome Text -->
 							<div class="welcome-text">
 								<h1>Cari kost mudah di Koseeker!</h1>
-								<p>Cari ratusan kost, kontrakan, apartemen disekitar kampusmu</p>
+								<p>Cari kost, kontrakan, apartemen disekitar kampusmu</p>
 							</div>
 							<!--/ End Welcome Text -->
 
@@ -33,57 +33,47 @@
 									<!--/ End Form Location -->
 									<!-- Form Property Type -->
 									<div class="form-group">
-										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-home"></i>Tipe Properti</span>
+										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-home"></i>Tipe</span>
 											<ul class="list">
 												<li data-value="1" class="option selected ">Kos-kosan</li>
 												<li data-value="2" class="option">Kontrakan</li>
-												<li data-value="3" class="option">Apartemen</li>
+<!-- 												<li data-value="3" class="option">Apartemen</li> -->
 											</ul>
 										</div>
 									</div>
 									<!--/ End Form Property Type -->
 									<!-- Form Property Status -->
 									<div class="form-group duration">
-										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-home"></i>Status Properti</span>
+										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-home"></i>Kategori</span>
 											<ul class="list">
-												<li data-value="1" class="option selected ">Dijual</li>
-												<li data-value="2" class="option">Disewa</li>
+												<li data-value="1" class="option selected ">Putra</li>
+												<li data-value="2" class="option">Putri</li>
+												<li data-value="2" class="option">Putri/Putri</li>
 											</ul>
 										</div>
 									</div>
 									<!--/ End Form Property Status -->
 									<!-- Form Bedrooms -->
 									<div class="form-group">
-										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-bed" aria-hidden="true"></i>Kamar</span>
+										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-calendar" aria-hidden="true"></i>Jenis</span>
 											<ul class="list">
-												<li data-value="1" class="option selected">1</li>
-												<li data-value="2" class="option">2</li>
-												<li data-value="3" class="option">3</li>
-												<li data-value="3" class="option">4</li>
-												<li data-value="3" class="option">5</li>
-												<li data-value="3" class="option">6</li>
-												<li data-value="3" class="option">7</li>
-												<li data-value="3" class="option">8</li>
-												<li data-value="3" class="option">9</li>
-												<li data-value="3" class="option">10</li>
+												<li data-value="1" class="option selected">Harian</li>
+												<li data-value="2" class="option">Bulanan</li>
+												<li data-value="3" class="option">Tahunan</li>
 											</ul>
 										</div>
 									</div>
 									<!--/ End Form Bedrooms -->
 									<!-- Form Bathrooms -->
 									<div class="form-group">
-										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-bath" aria-hidden="true"></i>Kamar Mandi</span>
+										<div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-money" aria-hidden="true"></i>Range Harga</span>
 											<ul class="list">
-												<li data-value="1" class="option selected">1</li>
-												<li data-value="2" class="option">2</li>
-												<li data-value="3" class="option">3</li>
-												<li data-value="3" class="option">4</li>
-												<li data-value="3" class="option">5</li>
-												<li data-value="3" class="option">6</li>
-												<li data-value="3" class="option">7</li>
-												<li data-value="3" class="option">8</li>
-												<li data-value="3" class="option">9</li>
-												<li data-value="3" class="option">10</li>
+												<li data-value="1" class="option selected">5 - 10 Juta</li>
+												<li data-value="2" class="option">10 - 15 Juta</li>
+												<li data-value="2" class="option">15 - 20 Juta</li>
+												<li data-value="2" class="option">20 - 30 Juta</li>
+												<li data-value="2" class="option">30 - 50 Juta</li>
+												<li data-value="2" class="option">50++ Juta</li>
 											</ul>
 										</div>
 									</div>
@@ -151,8 +141,21 @@
 									<i class="fa fa-map-marker"></i><span><?php echo $dkt->alamat_properti ?></span>
 								</a><br>
 								<a href="<?php echo base_url('detail/').$dkt->id_properti?>">
-
-									<i class="fa fa-male"></i><span><?php echo $dkt->kategori_properti ?></span>
+									<?php if ($dkt->kategori_properti == "putra") {
+									?>
+									<i class="fa fa-male"></i>
+									<?php
+									}else if ($dkt->kategori_properti == "putri"){
+										?>
+									
+									<i class="fa fa-female"></i>
+										<?php
+									}else{
+										?>
+									<i class="fa fa-male"><i class="fa fa-female"></i>	
+									<?php
+									} ?>
+									<span><?php echo $dkt->kategori_properti ?></span>
 								</a>
 							</p>
 							<!-- homes List -->

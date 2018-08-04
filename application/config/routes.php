@@ -19,5 +19,6 @@ $route['search'] = 'home/search';
 $route['terimakasih'] = 'home/terimakasih';
 $route['cek'] = 'home/cek_sess';
 $route['faq'] = 'home/faq';
+$route['search'] = 'home/search';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

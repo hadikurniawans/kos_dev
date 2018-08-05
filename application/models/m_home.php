@@ -43,6 +43,15 @@ class m_home extends CI_Model {
 			return $this->db->get()->result();
 		}
 
+		public function get_all_data_with_limit($table, $limit)
+		{
+			$this->db->select('*');
+			$this->db->from($table);
+			$this->db->order_by('tanggal_upload', 'desc');
+			$this->db->limit($limit);
+			return $this->db->get()->result();
+		}
+
 		public function update_data($id_data, $id, $table, $data){
 			$this->db->where($id_data, $id);
 		    $this->db->update($table,$data);
@@ -72,4 +81,7 @@ class m_home extends CI_Model {
 			$this->db->where('dfp.id_data_properti', $id);
 			return $this->db->get()->result();
 		}
+
+		// get data terbaru limit 9
+
 	}

@@ -37,7 +37,7 @@
 											<ul class="list">
 												<li data-value="1" class="option selected ">Kos-kosan</li>
 												<li data-value="2" class="option">Kontrakan</li>
-<!-- 												<li data-value="3" class="option">Apartemen</li> -->
+												<li data-value="3" class="option">Apartemen</li>
 											</ul>
 										</div>
 									</div>

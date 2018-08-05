@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data['data_kos_terbaru'] = $this->m_home->get_all_data('data_properti');
+		$data['data_kos_terbaru'] = $this->m_home->get_all_data_with_limit('data_properti',9);
 		$data['data_foto'] = $this->m_home->data_foto();
 		$this->load->view('templates/header.php');
 		$this->load->view('home.php',$data);
@@ -218,7 +218,8 @@ class Home extends CI_Controller {
 			'kategori_properti' => $this->input->post('kategori_properti'),
 			'jenis_properti' => $this->input->post('jenis_properti'),
 			'video_properti' => $this->input->post('video_properti'),
-			'thumbnail' => $this->input->post('thumbnail')
+			'thumbnail' => $this->input->post('thumbnail'),
+			'tanggal_upload' => time()
 		);
 
 		// $data_pemilik = array(
